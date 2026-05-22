@@ -5,6 +5,7 @@ import axios from 'axios';
 import { app } from 'electron';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const systemPrompt = require('./prompts');
 
 const getDataPath = () => path.join(app.getPath('appData'), 'deskgpt');
 const getConfigPath = () => path.join(getDataPath(), 'deskgpt-data.json');
@@ -85,7 +86,10 @@ export const handleChatOperations = (ipcMain: IpcMain) => {
         GROQ_API_URL,
         {
           model: 'mixtral-8x7b-32768',
-          messages: [{ role: 'user', content: message }],
+          messages: [
+            systemPrompt,
+            { role: 'user', content: message }
+          ],
         },
         {
           headers: {
