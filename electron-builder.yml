@@ -1,12 +1,22 @@
-appId: com.deskgpt
-productName: DeskGPT - Unleashed and Uncensored
-icon: assets/icon.png
-asar: true
-npmRebuild: false
+appId: com.deskgpt.app
+productName: DeskGPT
 directories:
+  buildResources: assets
   output: dist
+
+files:
+  - from: build
+    to: app
+  - from: dist/main
+    to: .
+  - from: package.json
+
 win:
   target:
     - nsis
     - portable
-  signAndEditExecutable: false
+  icon: assets/icon.png
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

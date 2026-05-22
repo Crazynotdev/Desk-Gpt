@@ -1,0 +1,105 @@
+.sidebar {
+  width: 260px;
+  background-color: #1e1e1e;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-header h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #4a9eff;
+}
+
+.btn-new {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a9eff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-new:hover {
+  background-color: #3a8eef;
+}
+
+.conversations {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.conversation {
+  padding: 12px 15px;
+  margin: 5px 10px;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.conversation:hover {
+  background-color: #333;
+}
+
+.conversation.active {
+  background-color: #4a9eff;
+  color: white;
+}
+
+.conversation .title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+
+.btn-delete:hover {
+  color: #ff6b6b;
+}
+
+.sidebar-footer {
+  padding: 15px;
+  border-top: 1px solid #333;
+}
+
+.btn-settings {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-settings:hover {
+  background-color: #333;
+}

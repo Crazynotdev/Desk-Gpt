@@ -1,0 +1,45 @@
+{
+  "name": "deskgpt",
+  "version": "1.0.0",
+  "description": "DeskGPT - Desktop AI Chat Client",
+  "main": "dist/main/index.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run start:main\" \"npm run start:renderer\"",
+    "start:main": "wait-on http://localhost:3000 && electron .",
+    "start:renderer": "react-scripts start",
+    "build:renderer": "react-scripts build",
+    "build:main": "tsc --project tsconfig.main.json",
+    "dist": "npm run build:renderer && npm run build:main && electron-builder",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "electron-squirrel-startup": "^1.1.0"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1",
+    "electron": "^latest",
+    "electron-builder": "^latest",
+    "concurrently": "^8.0.0",
+    "wait-on": "^7.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
